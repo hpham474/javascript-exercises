@@ -1,11 +1,11 @@
-const removeFromArray = function(array, remove1, remove2, remove3, remove4) {
-    for(let i = 0; i < array.length; i++) {
-        if(array[i] === remove1 || array[i] === remove2 || array[i] === remove3 || array[i] === remove4) {
-            array.splice(i,1);
-            i--;
+const removeFromArray = function(array, ...args) {
+    let removedArray = [];
+    for(const arr of array) {
+        if(!args.includes(arr)) {
+            removedArray.push(arr);
         }
     }
-    return array;
+    return removedArray;
 };
 
 // Do not edit below this line
